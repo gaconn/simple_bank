@@ -44,13 +44,13 @@ func TestUpdateAccount(t *testing.T) {
 	_, account, _ := createRandomAccount()
 	arg := UpdateAccountParams{
 		account.ID,
-		RandomCurrency(),
+		RandomBalance(),
 	}
 	updatedAccount, err := testQueries.UpdateAccount(context.Background(), arg)
 
 	require.NoError(t, err)
 	require.NotEmpty(t, updatedAccount)
-	require.Equal(t, updatedAccount.Currency, arg.Currency)
+	require.Equal(t, updatedAccount.Balance, arg.Balance)
 	require.Equal(t, updatedAccount.ID, arg.ID)
 	require.Equal(t, account.Balance, updatedAccount.Balance)
 	require.Equal(t, account.Owner, updatedAccount.Owner)

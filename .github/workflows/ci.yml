@@ -41,6 +41,6 @@ jobs:
         sudo  tar -xzf migrate.linux-amd64.tar.gz -C /usr/bin/
         which migrate
     - name: make database
-      run: migrateup
+      run: make migrateup
     - name: Test
       run: make test

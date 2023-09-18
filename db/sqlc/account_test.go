@@ -52,7 +52,6 @@ func TestUpdateAccount(t *testing.T) {
 	require.NotEmpty(t, updatedAccount)
 	require.Equal(t, updatedAccount.Balance, arg.Balance)
 	require.Equal(t, updatedAccount.ID, arg.ID)
-	require.Equal(t, account.Balance, updatedAccount.Balance)
 	require.Equal(t, account.Owner, updatedAccount.Owner)
 	require.Equal(t, account.CreatedAt, updatedAccount.CreatedAt)
 }
